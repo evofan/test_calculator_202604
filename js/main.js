@@ -78,3 +78,29 @@ function deleteData(e) {
   document.calculator.display.value = "";
   console.log(noList);
 }
+
+function checkData(e) {
+  console.log("checkData!");
+  let checkNo = eval(document.calculator.display.value);
+  console.log(checkNo);
+
+    // 数値無し時
+  if (checkNo === "" || checkNo === undefined) {
+    alert("番号が入力されていません");
+    return false;
+  }
+  for (let i = 0; i <= noList.length; i++) {
+    if (checkNo === noList[i]) {
+      alert("その番号は禁止リストに有ります！");
+      console.log(noList);
+      document.calculator.display.value = "";
+      return false;
+    } else {
+      console.log("禁止リストには無し");
+    }
+  }
+  alert("その番号は禁止リストに見つかりませんでした");
+  document.calculator.display.value = "";
+  console.log(noList);
+
+}
