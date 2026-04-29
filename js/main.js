@@ -26,3 +26,55 @@ function myEval(expr) {
   console.log(Function(expr)());
   Function(expr)();
 }
+
+let noList = [100];
+console.log(noList.length);
+
+function setData(e) {
+  console.log(e);
+  let setNo = eval(document.calculator.display.value);
+  console.log(setNo);
+  // 数値無し時
+  if (setNo === "" || setNo === undefined) {
+    alert("番号が入力されていません");
+    return false;
+  }
+  for (let i = 0; i <= noList.length; i++) {
+    if (setNo === noList[i]) {
+      alert("その番号は既に登録済みです");
+      document.calculator.display.value = "";
+      return false;
+    } else {
+      console.log("いいえ");
+    }
+  }
+  alert(setNo + "番を新たに登録しました");
+  document.calculator.display.value = "";
+  noList.push(setNo);
+  console.log(noList);
+}
+
+function deleteData(e) {
+  console.log(e);
+  let deleteNo = eval(document.calculator.display.value);
+  console.log(deleteNo);
+  // 数値無し時
+  if (deleteNo === "" || deleteNo === undefined) {
+    alert("番号が入力されていません");
+    return false;
+  }
+  for (let i = 0; i <= noList.length; i++) {
+    if (deleteNo === noList[i]) {
+      alert(deleteNo + "番を登録から削除します");
+      noList.splice(i, 1);
+      console.log(noList);
+      document.calculator.display.value = "";
+      return false;
+    } else {
+      console.log("いいえ");
+    }
+  }
+  alert("その番号は登録内に見つかりませんでした");
+  document.calculator.display.value = "";
+  console.log(noList);
+}

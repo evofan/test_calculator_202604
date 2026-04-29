@@ -65,8 +65,10 @@ input {
 }
 
 /*記号=の部分の背景色を上書きで設定*/
-.equal {
+.clear {
     background-color: #6b6b6b;
+
+    color: #fefefe;
 }
 
 /*カーソルを上に乗せたときに色を濃くする*/
@@ -90,4 +92,73 @@ input:active {
 
 .operator:active {
     background: #2c80b4;
+}
+
+.set_data {
+    /* ボタンのサイズ */
+    width: 140px;
+    height: 70px;
+    /* ボタンの文字サイズ */
+    font-size: x-large;
+    /* 数字部分の背景色 */
+    background-color: #dcdcdca4;
+    background-color: cadetblue;
+    /* ボタンの詳細設定 */
+    border: none;
+    border-radius: 20px;
+    /* クリック時の黒枠を消す */
+    outline: none;
+
+    color: #fefefe;
+
+}
+
+.set_data:hover {
+    background-color: rgb(76, 127, 128);
+}
+
+.set_data:active {
+    background-color: rgb(50, 84, 84);
+}
+
+.get_data {
+    /* ボタンのサイズ */
+    width: 140px;
+    height: 70px;
+    /* ボタンの文字サイズ */
+    font-size: x-large;
+    /* 数字部分の背景色 */
+    background-color: rgb(224, 44, 20);
+    /* ボタンの詳細設定 */
+    border: none;
+    border-radius: 20px;
+    /* クリック時の黒枠を消す */
+    outline: none;
+
+    color: #fefefe;
+
+}
+
+.get_data:hover {
+    background-color: rgb(153, 31, 15);
+}
+
+.get_data:active {
+    background-color: rgb(78, 17, 9);
+}
+
+.delete_data {
+    /* ボタンのサイズ */
+    width: 140px;
+    height: 70px;
+    /* ボタンの文字サイズ */
+    font-size: x-large;
+    /* 数字部分の背景色 */
+    background-color: #dcdcdca4;
+    /* ボタンの詳細設定 */
+    border: none;
+    border-radius: 20px;
+    /* クリック時の黒枠を消す */
+    outline: none;
+
 }
