@@ -8,6 +8,12 @@ function get_calc(btn) {
     */
   } else if (btn.value === "C") {
     document.calculator.display.value = "";
+
+    let colorElemnt = document.getElementsByClassName("display_message")[0];
+    colorElemnt.style.setProperty("background-color", "white");
+    // colorElemnt.style.setProperty("color", "white");
+
+    document.calculator.display_message.value = "";
   } else {
     if (btn.value === "×") {
       btn.value = "*";
@@ -84,23 +90,46 @@ function checkData(e) {
   let checkNo = eval(document.calculator.display.value);
   console.log(checkNo);
 
-    // 数値無し時
+  // 数値無し時
   if (checkNo === "" || checkNo === undefined) {
     alert("番号が入力されていません");
     return false;
   }
   for (let i = 0; i <= noList.length; i++) {
     if (checkNo === noList[i]) {
-      alert("その番号は禁止リストに有ります！");
+      // alert("その番号は禁止リストに有ります！");
       console.log(noList);
-      document.calculator.display.value = "";
+      // document.calculator.display.value = "";
+
+      // document.querySelector("#message").textContent = "Good Morning!";
+
+      // let colorElemnt = document.getElementsByClassName('display_message');
+      // let colorElemnt = document.getElementById("message");
+      let colorElemnt = document.getElementsByClassName("display_message")[0];
+      console.log(colorElemnt);
+      colorElemnt.style.setProperty("background-color", "red");
+      colorElemnt.style.setProperty("color", "white");
+
+      document.calculator.display_message.value = "× その番号は禁止です！";
+
       return false;
     } else {
       console.log("禁止リストには無し");
+
+      let colorElemnt = document.getElementsByClassName("display_message")[0];
+      console.log(colorElemnt);
+      colorElemnt.style.setProperty("background-color", "green");
+      colorElemnt.style.setProperty("color", "white");
+
+      document.calculator.display_message.value = "〇 その番号はOKです！";
     }
   }
-  alert("その番号は禁止リストに見つかりませんでした");
-  document.calculator.display.value = "";
+  // alert("その番号は禁止リストに見つかりませんでした");
+  // document.calculator.display.value = "";
   console.log(noList);
+}
 
+
+function readData(e){
+  alert(noList);
 }
