@@ -5,8 +5,13 @@
     margin: 0;
 }
 
-body{
+body {
     background-color: #fcfcfc;
+}
+
+.summary {
+    padding: 2px;
+    font-weight: bold;
 }
 
 #container {
@@ -14,14 +19,17 @@ body{
     width: 90%;
     margin: 0 auto;
     */
-    padding: 8px;
+    /* margin:0 auto;
+ text-align: center; */
 }
 
 /* テーブルの装飾 */
 table {
     /* 電卓のサイズ */
-    width: 300px;
-    height: 400px;
+    /* width: 300px; */
+    width: 90%;
+    /* height: 400px;
+    */
     /* 電卓が浮き出るように影をつける */
     border: solid 1px #dcdcdca4;
     border-right: solid 4px #dcdcdca4;
@@ -31,7 +39,7 @@ table {
     text-align: center;
     /* 余白調整 */
     padding: 8px;
-    margin: 20px;
+    margin: 5px;
 }
 
 input {
@@ -90,22 +98,27 @@ input {
 }
 
 /*カーソルを上に乗せたときに色を濃くする*/
+/*
 input:hover {
     background: #747373b9;
 }
+    */
 
 .display:hover {
-    background: #ffffff;
-    /*ディスプレイ部分は無効化*/
-}
-.display_message:hover {
-    background: #ffffff;
+    /* background: #ffffff;*/
     /*ディスプレイ部分は無効化*/
 }
 
+.display_message:hover {
+    /* background: #ffffff;*/
+    /*ディスプレイ部分は無効化*/
+}
+
+/*
 .operator:hover {
     background: #339cdd;
 }
+    */
 
 /*クリック時に色を濃くする */
 input:active {
@@ -135,9 +148,11 @@ input:active {
 
 }
 
+/*
 .set_data:hover {
     background-color: rgb(76, 127, 128);
 }
+    */
 
 .set_data:active {
     background-color: rgb(50, 84, 84);
@@ -161,9 +176,11 @@ input:active {
 
 }
 
+/*
 .get_data:hover {
     background-color: rgb(153, 31, 15);
 }
+    */
 
 .get_data:active {
     background-color: rgb(78, 17, 9);
