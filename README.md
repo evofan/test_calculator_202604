@@ -13,4 +13,7 @@ reference
 [https://yurupro.cloud/3107/](https://yurupro.cloud/3107/)  
 >arrayをシリアル化～ローカルストレージに保存
 
+**howler.js - JavaScript audio library for the modern web**  
+[https://howlerjs.com/](https://howlerjs.com/)  
+
 
