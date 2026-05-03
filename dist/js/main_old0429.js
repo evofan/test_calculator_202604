@@ -1,39 +1,3 @@
-// let noList = [100];
-let noList = [];
-console.log(noList.length);
-
-// serialize
-let serializedAry = localStorage.getItem("savedataAry");
-
-// Local Storage
-noList = JSON.parse(serializedAry);
-console.log(noList);
-
-// sound
-
-// Setup the new Howl.
-const sound1 = new Howl({
-  src: ["./sound/pingpong.mp3"],
-});
-const sound2 = new Howl({
-  src: ["./sound/boo.mp3"],
-});
-//console.log("sound1",sound1);
-
-// Play the sound.
-//sound1.play();
-
-// Change global volume.
-// Howler.volume(0.5);
-
-// ローカルデータが有った時のみ上書きする処理
-if (noList === null || noList.length === 0) {
-  console.log("ローカルストレージにデータが無いので100をテストで入れる");
-  noList = [100];
-}
-console.log(noList);
-console.log(noList.length);
-
 function get_calc(btn) {
   if (btn.value === "=") {
     document.calculator.display.value = eval(document.calculator.display.value);
@@ -69,6 +33,9 @@ function myEval(expr) {
   Function(expr)();
 }
 
+let noList = [100];
+console.log(noList.length);
+
 function setData(e) {
   console.log(e);
   let setNo = eval(document.calculator.display.value);
@@ -91,12 +58,6 @@ function setData(e) {
   document.calculator.display.value = "";
   noList.push(setNo);
   console.log(noList);
-
-  // serialize
-  serializedAry = JSON.stringify(noList);
-
-  // Local Storage
-  localStorage.setItem("savedataAry", serializedAry);
 }
 
 function deleteData(e) {
@@ -113,13 +74,6 @@ function deleteData(e) {
       alert(deleteNo + "番を登録から削除します");
       noList.splice(i, 1);
       console.log(noList);
-
-      // serialize
-      serializedAry = JSON.stringify(noList);
-
-      // Local Storage
-      localStorage.setItem("savedataAry", serializedAry);
-
       document.calculator.display.value = "";
       return false;
     } else {
@@ -156,8 +110,6 @@ function checkData(e) {
       colorElemnt.style.setProperty("background-color", "red");
       colorElemnt.style.setProperty("color", "white");
 
-      sound1.stop();
-      sound2.play();
       document.calculator.display_message.value = "× その番号は禁止です！";
 
       return false;
@@ -169,8 +121,6 @@ function checkData(e) {
       colorElemnt.style.setProperty("background-color", "green");
       colorElemnt.style.setProperty("color", "white");
 
-      sound2.stop();
-      sound1.play();
       document.calculator.display_message.value = "〇 その番号はOKです！";
     }
   }
@@ -179,38 +129,7 @@ function checkData(e) {
   console.log(noList);
 }
 
-function readData(e) {
+
+function readData(e){
   alert(noList);
-}
-
-function deleteAllData(e) {
-  console.log("deleteAllData");
-
-  noList = [];
-
-  localStorage.clear();
-
-  alert("全ての登録データを削除しました");
-  document.calculator.display.value = "";
-  console.log(noList);
-}
-
-function sortData(e) {
-  console.log("sortData()");
-
-  let newList = noList.sort((a,b) => (a < b ? -1 : 1));
-  console.log(newList);
-  noList = newList;
-
-  // serialize
-  serializedAry = JSON.stringify(noList);
-
-  // Local Storage
-  localStorage.setItem("savedataAry", serializedAry);
-
-  document.calculator.display.value = "";
-
-  alert("登録データを昇順でソートしました");
-  document.calculator.display.value = "";
-  console.log(noList);
 }
