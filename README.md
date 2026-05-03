@@ -16,4 +16,8 @@ reference
 **howler.js - JavaScript audio library for the modern web**  
 [https://howlerjs.com/](https://howlerjs.com/)  
 
+**JavaScriptで配列内の値を昇順・降順に並び替える方法**  
+[https://zenn.dev/tk4/articles/0dcfdd76b862202b217c](https://zenn.dev/tk4/articles/0dcfdd76b862202b217c)
+
+
 
